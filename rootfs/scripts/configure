@@ -1,6 +1,7 @@
 #!/command/with-contenv bash
 #shellcheck shell=bash
 
+# shellcheck source=source-stubs/scripts/common
 source /scripts/common
 
 # remove all old config files to start fresh
@@ -14,6 +15,7 @@ if [[ -n "$INFLUXDBV2_URL" ]]; then
         echo "[[outputs.influxdb_v2]]"
         echo "  urls = [\"$INFLUXDBV2_URL\"]"
         echo "  token = \"$INFLUXDBV2_TOKEN\""
+        # shellcheck disable=SC2153 # INFLUXDBV2_ORG is a runtime environment variable
         echo "  organization = \"$INFLUXDBV2_ORG\""
         echo "  bucket = \"$INFLUXDBV2_BUCKET\""
         echo ""
