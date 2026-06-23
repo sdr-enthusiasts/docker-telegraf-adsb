@@ -1,10 +1,9 @@
 # docker-telegraf-adsb
-Telegraf container for readsb and dump978
 
+Telegraf container for readsb and dump978
 
 ```yaml
 services:
-
   telegraf_adsb:
     image: ghcr.io/sdr-enthusiasts/docker-telegraf-adsb:latest
     container_name: telegraf_adsb
@@ -25,14 +24,14 @@ services:
       - /run:exec,size=64M
 ```
 
-### General options
+## General options
 
-| Variable            | Description                         |
-| ------------------- | ----------------------------------- |
-| `URL_1090` | URL of tar1090 or dump1090 webinterface to get data.                                                                      |
-| `HOST_978` | IP / Hostname of where to get the 978 data (port 30978 and 30979 are both required).                                      |
-| `URL_978`  | URL of skyaware978 webinterface to get 978 autogain data. (i.e. http://dump978/skyaware978)                               |
-| `INFLUXDB_SKIP_AIRCRAFT` | Set to any value to skip publishing aircraft data to InfluxDB to minimize bandwidth and database size.      |
+| Variable                 | Description                                                                                            |
+| ------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `URL_1090`               | URL of tar1090 or dump1090 webinterface to get data.                                                   |
+| `HOST_978`               | IP / Hostname of where to get the 978 data (port 30978 and 30979 are both required).                   |
+| `URL_978`                | URL of skyaware978 webinterface to get 978 autogain data. (i.e. [http://dump978/skyaware978])          |
+| `INFLUXDB_SKIP_AIRCRAFT` | Set to any value to skip publishing aircraft data to InfluxDB to minimize bandwidth and database size. |
 
 ### Output to InfluxDBv2
 
