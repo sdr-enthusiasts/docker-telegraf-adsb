@@ -1,4 +1,4 @@
-FROM telegraf:1.39@sha256:ac66e6482c0644765c12904ce2f42ce3f3702f72e905b1894120b51b12ae30c9 AS telegraf
+FROM telegraf:1.40@sha256:90da3a5b81426230ed677f00823de0d55ce198ad7b5c2e099afc417ebc744642 AS telegraf
 
 RUN touch /tmp/emptyfile
 
